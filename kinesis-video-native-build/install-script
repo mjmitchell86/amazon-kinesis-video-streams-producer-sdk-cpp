@@ -94,10 +94,10 @@ if [ ! -f $DOWNLOADS/local/lib/libssl.a ]; then
   echo "openssl lib not found. Installing"
   if [ ! -f $DOWNLOADS/openssl-1.1.0f.tar.gz ]; then
     cd $DOWNLOADS
-    curl -L "https://www.openssl.org/source/openssl-1.1.0f.tar.gz" -o "openssl-1.1.0f.tar.gz"
+    curl -L -k "https://www.openssl.org/source/openssl-1.1.0f.tar.gz" -o "openssl-1.1.0f.tar.gz"
   fi
   cd $DOWNLOADS
-  tar -xvf openssl-1.1.0f.tar.gz
+  tar -xvmf openssl-1.1.0f.tar.gz
   cd $DOWNLOADS/openssl-1.1.0f
   ./config  --prefix=$DOWNLOADS/local/ --openssldir=$DOWNLOADS/local/
   make
@@ -109,10 +109,10 @@ if [ ! -f $DOWNLOADS/local/lib/libcurl.a ]; then
   echo "Curl lib not found. Installing"
   if [ ! -f $DOWNLOADS/curl-7.57.0.tar.xz ]; then
     cd $DOWNLOADS
-    curl -L "https://curl.haxx.se/download/curl-7.57.0.tar.xz" -o "curl-7.57.0.tar.xz"
+    curl -L -k "https://curl.haxx.se/download/curl-7.57.0.tar.xz" -o "curl-7.57.0.tar.xz"
   fi
   cd $DOWNLOADS
-  tar -xvf curl-7.57.0.tar.xz
+  tar -xvmf curl-7.57.0.tar.xz
   cd $DOWNLOADS/curl-7.57.0
   ./configure --prefix=$DOWNLOADS/local/ --enable-dynamic --disable-rtsp --disable-ldap --without-zlib --with-ssl=$DOWNLOADS/local/ --with-ca-bundle=/etc/ssl/cert.pem
   make
@@ -125,10 +125,10 @@ if [ ! -f $DOWNLOADS/local/lib/liblog4cplus.dylib ]; then
     echo "log4cplus lib not found. Installing"
     if [ ! -f $DOWNLOADS/log4cplus-1.2.0.tar.xz ]; then
       cd $DOWNLOADS
-      curl -L "https://versaweb.dl.sourceforge.net/project/log4cplus/log4cplus-stable/1.2.0/log4cplus-1.2.0.tar.xz" -o "log4cplus-1.2.0.tar.xz"
+      curl -L -k "https://versaweb.dl.sourceforge.net/project/log4cplus/log4cplus-stable/1.2.0/log4cplus-1.2.0.tar.xz" -o "log4cplus-1.2.0.tar.xz"
     fi
     cd $DOWNLOADS
-    tar -xvf log4cplus-1.2.0.tar.xz
+    tar -xvmf log4cplus-1.2.0.tar.xz
     cd $DOWNLOADS/log4cplus-1.2.0
     ./configure --prefix=$DOWNLOADS/local/
     make
@@ -142,10 +142,10 @@ if [ ! -f $DOWNLOADS/local/lib/libgettextlib.dylib ]; then
    echo "gettext lib not found. Installing"
    if [ ! -f $DOWNLOADS/gettext-0.19.8.tar.xz ]; then
      cd $DOWNLOADS
-     curl -L "http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.tar.xz" -o "gettext-0.19.8.tar.xz"
+     curl -L -k "http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.tar.xz" -o "gettext-0.19.8.tar.xz"
    fi
    cd $DOWNLOADS
-   tar -xvf gettext-0.19.8.tar.xz
+   tar -xvmf gettext-0.19.8.tar.xz
    cd $DOWNLOADS/gettext-0.19.8
    ./configure --prefix=$DOWNLOADS/local/
    make
@@ -160,10 +160,10 @@ if [ ! -f $DOWNLOADS/local/lib/libffi.dylib ]; then
     echo "libffi lib not found. Installing"
     if [ ! -f $DOWNLOADS/libffi-3.2.1.tar.gz ]; then
       cd $DOWNLOADS
-      curl -L "ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz" -o "libffi-3.2.1.tar.gz"
+      curl -L -k "ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz" -o "libffi-3.2.1.tar.gz"
     fi
     cd $DOWNLOADS
-    tar -xvf libffi-3.2.1.tar.gz
+    tar -xvmf libffi-3.2.1.tar.gz
     cd $DOWNLOADS/libffi-3.2.1
     ./configure --prefix=$DOWNLOADS/local/
     make
@@ -177,10 +177,10 @@ if [ ! -f $DOWNLOADS/local/lib/libpcre.dylib ]; then
     echo "pcre lib not found. Installing"
     if [ ! -f $DOWNLOADS/pcre-8.41.tar.gz ]; then
       cd $DOWNLOADS
-      curl -L "https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz" -o "pcre-8.41.tar.gz"
+      curl -L -k "https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz" -o "pcre-8.41.tar.gz"
     fi
     cd $DOWNLOADS
-    tar -xvf pcre-8.41.tar.gz
+    tar -xvmf pcre-8.41.tar.gz
     cd $DOWNLOADS/pcre-8.41
     ./configure --prefix=$DOWNLOADS/local/
     make
@@ -194,10 +194,10 @@ if [ ! -f $DOWNLOADS/local/lib/libz.dylib ]; then
     echo "zlib lib not found. Installing"
     if [ ! -f $DOWNLOADS/zlib-1.2.11.tar.gz ]; then
       cd $DOWNLOADS
-      curl -L "http://www.zlib.net/zlib-1.2.11.tar.gz" -o "zlib-1.2.11.tar.gz"
+      curl -L -k "http://www.zlib.net/zlib-1.2.11.tar.gz" -o "zlib-1.2.11.tar.gz"
     fi
     cd $DOWNLOADS
-    tar -xvf zlib-1.2.11.tar.gz
+    tar -xvmf zlib-1.2.11.tar.gz
     cd $DOWNLOADS/zlib-1.2.11
     ./configure --prefix=$DOWNLOADS/local/
     make
@@ -211,10 +211,10 @@ if [ ! -f $DOWNLOADS/local/lib/libiconv.dylib ]; then
     echo "iconv lib not found. Installing"
     if [ ! -f $DOWNLOADS/libiconv-1.15.tar.gz ]; then
       cd $DOWNLOADS
-      curl -L "https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz" -o "libiconv-1.15.tar.gz"
+      curl -L -k "https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz" -o "libiconv-1.15.tar.gz"
     fi
     cd $DOWNLOADS
-    tar -xvf libiconv-1.15.tar.gz
+    tar -xvmf libiconv-1.15.tar.gz
     cd $DOWNLOADS/libiconv-1.15
     ./configure --prefix=$DOWNLOADS/local/
     make
@@ -229,10 +229,10 @@ if [[ $PLATFORM == 'linux' ]]; then
       echo "libmount lib not found. Installing"
       if [ ! -f $DOWNLOADS/util-linux-2.31.tar.gz ]; then
         cd $DOWNLOADS
-        curl -L "https://www.kernel.org/pub/linux/utils/util-linux/v2.31/util-linux-2.31.tar.gz" -o "util-linux-2.31.tar.gz"
+        curl -L -k "https://www.kernel.org/pub/linux/utils/util-linux/v2.31/util-linux-2.31.tar.gz" -o "util-linux-2.31.tar.gz"
       fi
       cd $DOWNLOADS
-      tar -xvf util-linux-2.31.tar.gz
+      tar -xvmf util-linux-2.31.tar.gz
       cd $DOWNLOADS/util-linux-2.31
       ./configure --prefix=$DOWNLOADS/local/ --disable-all-programs --enable-libmount --enable-libblkid
       make
@@ -246,10 +246,10 @@ fi
     echo "m4 not found. Installing"
     if [ ! -f $DOWNLOADS/m4-1.4.10.tar.gz ]; then
       cd $DOWNLOADS
-      curl -L "http://ftpmirror.gnu.org/m4/m4-1.4.10.tar.gz" -o "m4-1.4.10.tar.xz"
+      curl -L -k "http://ftpmirror.gnu.org/m4/m4-1.4.10.tar.gz" -o "m4-1.4.10.tar.xz"
     fi
     cd $DOWNLOADS
-    tar -xvf m4-1.4.10.tar.xz
+    tar -xvmf m4-1.4.10.tar.xz
     cd $DOWNLOADS/m4-1.4.10
     ./configure --prefix=$DOWNLOADS/local  CFLAGS="-I$DOWNLOADS/local/include" LDFLAGS="-L$DOWNLOADS/local/lib"
     make
@@ -263,10 +263,10 @@ fi
           echo "flex not found. Installing"
           if [ ! -f $DOWNLOADS/flex-2.6.3.tar.gz ]; then
             cd $DOWNLOADS
-            curl -L "https://github.com/westes/flex/releases/download/v2.6.3/flex-2.6.3.tar.gz" -o "flex-2.6.3.tar.xz"
+            curl -L -k "https://github.com/westes/flex/releases/download/v2.6.3/flex-2.6.3.tar.gz" -o "flex-2.6.3.tar.xz"
           fi
           cd $DOWNLOADS
-          tar -xvf flex-2.6.3.tar.xz
+          tar -xvmf flex-2.6.3.tar.xz
           cd $DOWNLOADS/flex-2.6.3
           ./configure --prefix=$DOWNLOADS/local  CFLAGS="-I$DOWNLOADS/local/include" LDFLAGS="-L$DOWNLOADS/local/lib"
           make
@@ -280,10 +280,10 @@ if [[ $PLATFORM != 'mac' || $KERNEL_VERSION < 17 ]]; then
     echo "bison not found. Installing"
     if [ ! -f $DOWNLOADS/bison-2.3.tar.gz ]; then
       cd $DOWNLOADS
-      curl -L "http://ftp.gnu.org/gnu/bison/bison-3.0.4.tar.gz" -o "bison-3.0.4.tar.xz"
+      curl -L -k "http://ftp.gnu.org/gnu/bison/bison-3.0.4.tar.gz" -o "bison-3.0.4.tar.xz"
     fi
     cd $DOWNLOADS
-    tar -xvf bison-3.0.4.tar.xz
+    tar -xvmf bison-3.0.4.tar.xz
     cd $DOWNLOADS/bison-3.0.4
     ./configure --prefix=$DOWNLOADS/local  CFLAGS="-I$DOWNLOADS/local/include" LDFLAGS="-L$DOWNLOADS/local/lib"
     make
@@ -297,10 +297,10 @@ fi
       echo "libtools not found. Installing"
       if [ ! -f $DOWNLOADS/libtool-2.4.6.tar.gz ]; then
         cd $DOWNLOADS
-        curl -L "http://ftpmirror.gnu.org/libtool/libtool-2.4.6.tar.gz" -o "libtool-2.4.6.tar.xz"
+        curl -L -k "http://ftpmirror.gnu.org/libtool/libtool-2.4.6.tar.gz" -o "libtool-2.4.6.tar.xz"
       fi
       cd $DOWNLOADS
-      tar -xvf libtool-2.4.6.tar.xz
+      tar -xvmf libtool-2.4.6.tar.xz
       cd $DOWNLOADS/libtool-2.4.6
       ./configure --prefix=$DOWNLOADS/local  CFLAGS="-I$DOWNLOADS/local/include" LDFLAGS="-L$DOWNLOADS/local/lib"
       make
@@ -321,10 +321,10 @@ if [ ! -f $DOWNLOADS/local/lib/libglib-2.0.dylib ]; then
   echo "glib lib not found. Installing"
    if [ ! -f $DOWNLOADS/glib-2.54.2.tar.xz ]; then
      cd $DOWNLOADS
-     curl -L "http://ftp.gnome.org/pub/gnome/sources/glib/2.54/glib-2.54.2.tar.xz" -o "glib-2.54.2.tar.xz"
+     curl -L -k "http://ftp.gnome.org/pub/gnome/sources/glib/2.54/glib-2.54.2.tar.xz" -o "glib-2.54.2.tar.xz"
    fi
    cd $DOWNLOADS
-   tar -xvf glib-2.54.2.tar.xz
+   tar -xvmf glib-2.54.2.tar.xz
    cd $DOWNLOADS/glib-2.54.2
   # autoreconf -f -i
    ./configure --prefix=$DOWNLOADS/local/ --with-pcre --with-libiconv
@@ -339,10 +339,10 @@ if [ ! -f $DOWNLOADS/local/lib/libgtest.dylib ]; then
     echo "gtest lib not found. Installing"
     if [ ! -f $DOWNLOADS/google-test-1.8.0.gz ]; then
       cd $DOWNLOADS
-      curl -L "https://github.com/google/googletest/archive/release-1.8.0.tar.gz" -o "google-test-1.8.0.gz"
+      curl -L -k "https://github.com/google/googletest/archive/release-1.8.0.tar.gz" -o "google-test-1.8.0.gz"
     fi
     cd $DOWNLOADS
-    tar -xvf google-test-1.8.0.gz
+    tar -xvmf google-test-1.8.0.gz
     cd googletest-release-1.8.0/googletest
     cmake -DBUILD_SHARED_LIBS=ON .
     make
@@ -359,10 +359,10 @@ if [[ $PLATFORM != 'mac' || $KERNEL_VERSION < 17 ]]; then
     echo "autoconf not found. Installing"
     if [ ! -f $DOWNLOADS/autoconf-2.69.tar.gz ]; then
       cd $DOWNLOADS
-      curl -L "http://ftpmirror.gnu.org/autoconf/autoconf-2.69.tar.gz" -o "autoconf-2.69.tar.xz"
+      curl -L -k "http://ftpmirror.gnu.org/autoconf/autoconf-2.69.tar.gz" -o "autoconf-2.69.tar.xz"
     fi
     cd $DOWNLOADS
-    tar -xvf autoconf-2.69.tar.xz
+    tar -xvmf autoconf-2.69.tar.xz
     cd $DOWNLOADS/autoconf-2.69
     ./configure --prefix=$DOWNLOADS/local  CFLAGS="-I$DOWNLOADS/local/include" LDFLAGS="-L$DOWNLOADS/local/lib"
     make
@@ -374,10 +374,10 @@ fi
     echo "automake not found. Installing"
     if [ ! -f $DOWNLOADS/automake-1.15.1.tar.gz ]; then
       cd $DOWNLOADS
-      curl -L "https://ftp.gnu.org/gnu/automake/automake-1.15.1.tar.gz" -o "automake-1.15.1.tar.xz"
+      curl -L -k "https://ftp.gnu.org/gnu/automake/automake-1.15.1.tar.gz" -o "automake-1.15.1.tar.xz"
     fi
     cd $DOWNLOADS
-    tar -xvf automake-1.15.1.tar.xz
+    tar -xvmf automake-1.15.1.tar.xz
     cd $DOWNLOADS/automake-1.15.1
     ./configure --prefix=$DOWNLOADS/local  CFLAGS="-I$DOWNLOADS/local/include" LDFLAGS="-L$DOWNLOADS/local/lib"
     make
@@ -393,10 +393,10 @@ if [ ! -f $DOWNLOADS/local/lib/libgstreamer-1.0.dylib ]; then
     export ARCHFLAGS="-arch x86_64"
     if [ ! -f $DOWNLOADS/gstreamer-1.12.3.tar.xz ]; then
       cd $DOWNLOADS
-      curl -L "https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.12.3.tar.xz" -o "gstreamer-1.12.3.tar.xz"
+      curl -L -k "https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.12.3.tar.xz" -o "gstreamer-1.12.3.tar.xz"
     fi
     cd $DOWNLOADS
-    tar -xvf gstreamer-1.12.3.tar.xz
+    tar -xvmf gstreamer-1.12.3.tar.xz
     cd $DOWNLOADS/gstreamer-1.12.3
 
     for d in ./*/ ; do
@@ -417,10 +417,10 @@ if [ ! -f $DOWNLOADS/local/lib/libgstvideo-1.0.dylib ]; then
     echo "gst-plugin-base not found. Installing"
     if [ ! -f $DOWNLOADS/gst-plugins-base-1.12.3.tar.xz ]; then
       cd $DOWNLOADS
-      curl -L "https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.12.3.tar.xz" -o "gst-plugins-base-1.12.3.tar.xz"
+      curl -L -k "https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.12.3.tar.xz" -o "gst-plugins-base-1.12.3.tar.xz"
     fi
     cd $DOWNLOADS
-    tar -xvf gst-plugins-base-1.12.3.tar.xz
+    tar -xvmf gst-plugins-base-1.12.3.tar.xz
     cd $DOWNLOADS/gst-plugins-base-1.12.3
 
     for d in ./*/ ; do
@@ -440,10 +440,10 @@ if [ ! -f $DOWNLOADS/local/lib/gstreamer-1.0/libgstavi.la ]; then
   echo "gst-plugin-good not found. Installing"
   if [ ! -f $DOWNLOADS/gst-plugins-good-1.12.3.tar.xz ]; then
     cd $DOWNLOADS
-    curl -L "https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.12.3.tar.xz" -o "gst-plugins-good-1.12.3.tar.xz"
+    curl -L -k "https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.12.3.tar.xz" -o "gst-plugins-good-1.12.3.tar.xz"
   fi
   cd $DOWNLOADS
-  tar -xvf gst-plugins-good-1.12.3.tar.xz
+  tar -xvmf gst-plugins-good-1.12.3.tar.xz
   cd $DOWNLOADS/gst-plugins-good-1.12.3
 
   for d in ./*/ ; do
@@ -463,10 +463,10 @@ if [ ! -f $DOWNLOADS/local/lib/libgstbadvideo-1.0.dylib ]; then
     echo "gst-plugin-bad not found. Installing"
     if [ ! -f $DOWNLOADS/gst-plugins-bad-1.12.3.tar.xz ]; then
       cd $DOWNLOADS
-      curl -L "https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.12.3.tar.xz" -o "gst-plugins-bad-1.12.3.tar.xz"
+      curl -L -k "https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.12.3.tar.xz" -o "gst-plugins-bad-1.12.3.tar.xz"
     fi
     cd $DOWNLOADS
-    tar -xvf gst-plugins-bad-1.12.3.tar.xz
+    tar -xvmf gst-plugins-bad-1.12.3.tar.xz
     cd $DOWNLOADS/gst-plugins-bad-1.12.3
 
     for d in ./*/ ; do
@@ -487,10 +487,10 @@ if [ ! -f $DOWNLOADS/local/lib/libx264.dylib ]; then
     echo "gst-plugin-ugly not found. Installing"
     if [ ! -f $DOWNLOADS/x264-snapshot-20171204-2245-stable.tar.bz2 ]; then
       cd $DOWNLOADS
-      curl -L "https://download.videolan.org/x264/snapshots/x264-snapshot-20171204-2245-stable.tar.bz2" -o "x264-snapshot-20171204-2245-stable.tar.bz2"
+      curl -L -k "https://download.videolan.org/x264/snapshots/x264-snapshot-20171204-2245-stable.tar.bz2" -o "x264-snapshot-20171204-2245-stable.tar.bz2"
     fi
     cd $DOWNLOADS
-    tar -xvf x264-snapshot-20171204-2245-stable.tar.bz2
+    tar -xvmf x264-snapshot-20171204-2245-stable.tar.bz2
     cd $DOWNLOADS/x264-snapshot-20171204-2245-stable
 
     for d in ./*/ ; do
@@ -511,10 +511,10 @@ if [ ! -f $DOWNLOADS/local/lib/gstreamer-1.0/libgstx264.dylib ]; then
     echo "gst-plugin-ugly not found. Installing"
     if [ ! -f $DOWNLOADS/gst-plugins-ugly-1.12.3.tar.xz ]; then
       cd $DOWNLOADS
-      curl -L "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.12.3.tar.xz" -o "gst-plugins-ugly-1.12.3.tar.xz"
+      curl -L -k "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.12.3.tar.xz" -o "gst-plugins-ugly-1.12.3.tar.xz"
     fi
     cd $DOWNLOADS
-    tar -xvf gst-plugins-ugly-1.12.3.tar.xz
+    tar -xvmf gst-plugins-ugly-1.12.3.tar.xz
     cd $DOWNLOADS/gst-plugins-ugly-1.12.3
 
     for d in ./*/ ; do
@@ -534,11 +534,11 @@ echo "Checking for yasm"
    echo "yasm-1.3.0.tar.gz not found. Installing"
     if [ ! -f $DOWNLOADS/yasm-1.3.0.tar.gz ]; then
       cd $DOWNLOADS
-      curl -L "https://www.tortall.net/projects/yasm/releases/yasm-1.3.0.tar.gz" -o "yasm-1.3.0.tar.gz"
+      curl -L -k "https://www.tortall.net/projects/yasm/releases/yasm-1.3.0.tar.gz" -o "yasm-1.3.0.tar.gz"
       cd $DOWNLOADS
     fi
     cd $DOWNLOADS
-    tar -xvf yasm-1.3.0.tar.gz
+    tar -xvmf yasm-1.3.0.tar.gz
     cd $DOWNLOADS/yasm-1.3.0
 
     for d in ./*/ ; do
@@ -558,10 +558,10 @@ if [ ! -f $DOWNLOADS/local/lib/gstreamer-1.0/libgstlibav.dylib ]; then
     echo "gst-libav not found. Installing"
     if [ ! -f $DOWNLOADS/gst-libav-1.12.4.tar.xz ]; then
       cd $DOWNLOADS
-      curl -L "https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.12.4.tar.xz" -o "gst-libav-1.12.4.tar.xz"
+      curl -L -k "https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.12.4.tar.xz" -o "gst-libav-1.12.4.tar.xz"
     fi
     cd $DOWNLOADS
-    tar -xvf gst-libav-1.12.4.tar.xz
+    tar -xvmf gst-libav-1.12.4.tar.xz
     cd $DOWNLOADS/gst-libav-1.12.4
 
     for d in ./*/ ; do
@@ -586,10 +586,10 @@ if [[ $sys_info =~ ^arm ]]; then
       echo "gst-omx not found. Installing"
       if [ ! -f $DOWNLOADS/gst-omx-1.10.4.tar.xz ]; then
         cd $DOWNLOADS
-        curl -L "https://gstreamer.freedesktop.org/src/gst-omx/gst-omx-1.10.4.tar.xz" -o "gst-omx-1.10.4.tar.xz"
+        curl -L -k "https://gstreamer.freedesktop.org/src/gst-omx/gst-omx-1.10.4.tar.xz" -o "gst-omx-1.10.4.tar.xz"
       fi
       cd $DOWNLOADS
-      tar -xvf gst-omx-1.10.4.tar.xz
+      tar -xvmf gst-omx-1.10.4.tar.xz
       cd $DOWNLOADS/gst-omx-1.10.4
 
       for d in ./*/ ; do
